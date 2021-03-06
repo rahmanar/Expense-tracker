@@ -1,0 +1,31 @@
+<h1 class="head">Expense Tracker</h1>
+<div class="main" >
+<div class="right">
+
+  Enter your salary:<input placeholder="Your salary" [(ngModel)]="usalary" class="salary" ><br><br>
+  Enter your spends: <input placeholder="Your spend" [(ngModel)]="uspend"><br><br>
+  Enter your Description: <input placeholder="what you spend?" [(ngModel)]="udesc">
+  <button (click)="save()" class="add">ADD</button>
+
+  <table>
+    <tr>
+      <th>SPENDS</th>
+      <th>DESCRIPTION</th>
+      <th>     </th>
+    </tr>
+    <tr *ngFor="let q of list; let i = index">
+      <td>{{q.spend}}</td>
+      <td>{{q.Description}}</td>
+      <td><button (click)="delete(i)"  >Delete</button></td>
+    </tr>
+  </table>
+  <hr>
+  <div class="left" >
+    <br>
+    <span class="font" > Your Balance : {{bal}} </span><br>
+    
+    <!-- <button (click)="answer()" class="final">Calculate Balance </button> -->
+    <button (click)="refresh()" class="refresh">Refresh</button><br><br>
+   </div>
+  </div>
+</div>
